@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\kenar\\source\\repos\\FishingGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{19019BF3-1ED5-4AF1-B87F-8E592211134B}|FishingGame\\FishingGame.csproj|c:\\users\\kenar\\source\\repos\\fishinggame\\fishinggame\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19019BF3-1ED5-4AF1-B87F-8E592211134B}|FishingGame\\FishingGame.csproj|solutionrelative:fishinggame\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{19019BF3-1ED5-4AF1-B87F-8E592211134B}|FishingGame\\FishingGame.csproj|c:\\users\\kenar\\source\\repos\\fishinggame\\fishinggame\\fishingactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19019BF3-1ED5-4AF1-B87F-8E592211134B}|FishingGame\\FishingGame.csproj|solutionrelative:fishinggame\\fishingactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19019BF3-1ED5-4AF1-B87F-8E592211134B}|FishingGame\\FishingGame.csproj|c:\\users\\kenar\\source\\repos\\fishinggame\\fishinggame\\fish.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19019BF3-1ED5-4AF1-B87F-8E592211134B}|FishingGame\\FishingGame.csproj|solutionrelative:fishinggame\\fish.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19019BF3-1ED5-4AF1-B87F-8E592211134B}|FishingGame\\FishingGame.csproj|c:\\users\\kenar\\source\\repos\\fishinggame\\fishinggame\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19019BF3-1ED5-4AF1-B87F-8E592211134B}|FishingGame\\FishingGame.csproj|solutionrelative:fishinggame\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19019BF3-1ED5-4AF1-B87F-8E592211134B}|FishingGame\\FishingGame.csproj|c:\\users\\kenar\\source\\repos\\fishinggame\\fishinggame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\kenar\\source\\repos\\FishingGame\\FishingGame\\Player.cs",
               "RelativeDocumentMoniker": "FishingGame\\Player.cs",
@@ -43,26 +43,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "FishingActions.cs",
               "DocumentMoniker": "C:\\Users\\kenar\\source\\repos\\FishingGame\\FishingGame\\FishingActions.cs",
               "RelativeDocumentMoniker": "FishingGame\\FishingActions.cs",
               "ToolTip": "C:\\Users\\kenar\\source\\repos\\FishingGame\\FishingGame\\FishingActions.cs",
               "RelativeToolTip": "FishingGame\\FishingActions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwDMAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-16T05:15:48.32Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Fish.cs",
               "DocumentMoniker": "C:\\Users\\kenar\\source\\repos\\FishingGame\\FishingGame\\Fish.cs",
               "RelativeDocumentMoniker": "FishingGame\\Fish.cs",
               "ToolTip": "C:\\Users\\kenar\\source\\repos\\FishingGame\\FishingGame\\Fish.cs",
               "RelativeToolTip": "FishingGame\\Fish.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADAAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-16T05:06:33.03Z",
               "EditorCaption": ""
