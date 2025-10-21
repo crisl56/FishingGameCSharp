@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kenar\\source\\repos\\FishingGame\\FishingGame\\FishingGame.csproj": {}
+    "H:\\T1 - Intro to C#\\Assignments\\A3 - Fishing (Repo)\\FIshingGame\\FishingGameCSharp\\FishingGame\\FishingGame\\FishingGame.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kenar\\source\\repos\\FishingGame\\FishingGame\\FishingGame.csproj": {
+    "H:\\T1 - Intro to C#\\Assignments\\A3 - Fishing (Repo)\\FIshingGame\\FishingGameCSharp\\FishingGame\\FishingGame\\FishingGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kenar\\source\\repos\\FishingGame\\FishingGame\\FishingGame.csproj",
+        "projectUniqueName": "H:\\T1 - Intro to C#\\Assignments\\A3 - Fishing (Repo)\\FIshingGame\\FishingGameCSharp\\FishingGame\\FishingGame\\FishingGame.csproj",
         "projectName": "FishingGame",
-        "projectPath": "C:\\Users\\kenar\\source\\repos\\FishingGame\\FishingGame\\FishingGame.csproj",
-        "packagesPath": "C:\\Users\\kenar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kenar\\source\\repos\\FishingGame\\FishingGame\\obj\\",
+        "projectPath": "H:\\T1 - Intro to C#\\Assignments\\A3 - Fishing (Repo)\\FIshingGame\\FishingGameCSharp\\FishingGame\\FishingGame\\FishingGame.csproj",
+        "packagesPath": "C:\\Users\\pg29vi\\.nuget\\packages\\",
+        "outputPath": "H:\\T1 - Intro to C#\\Assignments\\A3 - Fishing (Repo)\\FIshingGame\\FishingGameCSharp\\FishingGame\\FishingGame\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\kenar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pg29vi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +27,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -66,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
