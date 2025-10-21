@@ -17,7 +17,7 @@ namespace FishingGame
                 Console.WriteLine("3. Sell Fish");
                 Console.WriteLine("==========================");
                 Console.Write("Choose an option: ");
-                playerInp = Console.ReadLine();
+                Input.ReadString(out playerInp);
                 switch (playerInp)
                 {
                     case "1":
