@@ -6,7 +6,7 @@ namespace FishingGame
     {
         static void Main(string[] args)
         {
-            string playerInp;
+            int playerInp;
             while (true)
             {
                 Console.Clear();
@@ -17,18 +17,18 @@ namespace FishingGame
                 Console.WriteLine("3. Sell Fish");
                 Console.WriteLine("==========================");
                 Console.Write("Choose an option: ");
-                Input.ReadString(out playerInp);
+                Input.ReadInt(out playerInp, 1, 3);
                 switch (playerInp)
                 {
-                    case "1":
+                    case 1:
                         FishingActions.GoFish();
                         break;
-                    case "2":
+                    case 2:
                         Player.ShowInventory();
                         Console.WriteLine("Press Enter to exit your inventory");
                         Console.ReadLine();
                         break;
-                    case "3":
+                    case 3:
                         int fishToSellIndex;
                         Player.ShowInventory();
                         Console.WriteLine("Which fish would you like to sell?");
@@ -37,10 +37,6 @@ namespace FishingGame
                         {
                             FishingActions.SellFish(fishToSellIndex);
                         }
-                        break;
-                    default:
-                        Console.WriteLine("Invalid Input, Press enter to try again");
-                        Console.ReadLine();
                         break;
                 }
                 
