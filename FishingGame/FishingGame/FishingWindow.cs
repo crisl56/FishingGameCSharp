@@ -4,20 +4,25 @@ namespace FishingGame
 {
     public class FishingWindow
     {
+        // ~^~_~^~
         //   <*(((><
-        public static string[,] waterMatrix = new string[10, 10] {
-            {"~^~_~^~", "~^~_~^~", "~^~_~^~", "~^~_~^~", "~^~_~^~", "~^~_~^~", "~^~_~^~", "~^~_~^~", "~^~_~^~", "~^~_~^~", },
-            {"       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       " },
-            {"       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       " },
-            {"       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       " },
-            {"       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       " },
-            {"       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       " },
-            {"       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       " },
-            {"       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       " },
-            {"       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       " },
-            {"       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       ", "       " },
-        };
+        public static Cell[,] waterMatrix = new Cell[10, 10] {
+            {new Water(), new Water(), new Water(), new Water(), new Water(), new Water(), new Water(), new Water(), new Water(), new Water() },
+            {new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell() },
+            {new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell() },
+            {new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell() },
+            {new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell() },
+            {new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell() },
+            {new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell() },
+            {new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell() },
+            {new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell() },
+            {new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell(), new Cell() },
 
+        };
+        public FishingWindow()
+        {
+
+        }
         public static void Display()
         {
             int CursorPosX = Console.CursorLeft;
@@ -53,7 +58,7 @@ namespace FishingGame
             {
                 for (int col = 0; col < 10; col++)
                 {
-                    Console.Write(waterMatrix[row, col]);
+                    waterMatrix[row, col].DisplayASCII();
                 }
                 Console.WriteLine();
             }

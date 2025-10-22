@@ -4,7 +4,7 @@ namespace FishingGame
 {
     // Class by Cris Odonel
 
-    public class Fish
+    public class Fish : Cell
     {
         // Variables
         protected Random random = new Random();
@@ -18,10 +18,10 @@ namespace FishingGame
         protected string species;
         protected int size;
         protected int weight;
-        protected string fishASCII = "<O(((><"; // max ASCII is 7 characters
+        protected override string mAsset { get; set; } = "<O(((><"; // max ASCII is 7 characters
 
         // Other
-        protected ConsoleColor fishDisplayColor = ConsoleColor.White;
+        protected override ConsoleColor mDisplayColor { get; set; } = ConsoleColor.White;
 
         // Constructor
         public Fish()
@@ -31,12 +31,12 @@ namespace FishingGame
         }
 
         // Parametized Constructor
-        public Fish(string fishName, string fishASCII, ConsoleColor fishDisplayColour) : this()
+        public Fish(string fishName, string asset, ConsoleColor displayColor) : this()
         {
             // This Assumes the FishASCII is less than 7 chars lol
             this.species = fishName;
-            this.fishASCII = fishASCII;
-            this.fishDisplayColor = fishDisplayColour;
+            this.mAsset = asset;
+            this.mDisplayColor = displayColor;
         }
 
         // Functions 
@@ -67,14 +67,14 @@ namespace FishingGame
 
         public void DisplayFishASCII(bool shouldReverse)
         {
-            string fishASCIIToPrint = fishASCII;
+            string mAssetToPrint = mAsset;
 
-            if (shouldReverse) { fishASCIIToPrint = ReverseString(fishASCII); }
+            if (shouldReverse) { mAssetToPrint = ReverseString(mAsset); }
 
             // Custom colours
-            Console.ForegroundColor = fishDisplayColor;
+            Console.ForegroundColor = mDisplayColor;
             // Max ASCII art is 7 characters
-            Console.WriteLine(fishASCIIToPrint);
+            Console.Write(mAssetToPrint);
             Console.ForegroundColor = ConsoleColor.White;
         }
 
@@ -104,9 +104,9 @@ namespace FishingGame
             get => weight; set => weight = value;
         }
 
-        public string FishASCII
+        public string Asset
         {
-            get => fishASCII;
+            get => mAsset;
             set
             {
                 // Check if the length is in the range
@@ -116,7 +116,7 @@ namespace FishingGame
                 }
                 else
                 {
-                    fishASCII = value;
+                    mAsset = value;
                 }
             }
         }

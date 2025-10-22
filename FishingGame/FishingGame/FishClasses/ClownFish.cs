@@ -13,15 +13,15 @@ namespace FishingGame
         public ClownFish() : base()
         {
             this.species = "Tuna";
-            this.fishASCII = " <*7>< ";
+            this.mAsset = " <*7>< ";
 
-            this.fishDisplayColor = ConsoleColor.Red;
+            this.mDisplayColor = ConsoleColor.Red;
         }
 
         // Parameterized Constructor
-        public ClownFish(ConsoleColor fishDisplayColour) : this()
+        public ClownFish(ConsoleColor displayColor) : this()
         {
-            this.fishDisplayColor = fishDisplayColour;
+            this.mDisplayColor = displayColor;
         }
 
 
