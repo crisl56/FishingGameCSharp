@@ -70,7 +70,7 @@ namespace FishingGame
         {
             if (Player.inventory[index] != null)
             {
-                int fishValue = Player.inventory[index].Weight / 5; // A random estimate for how much each fish is worth
+                int fishValue = Player.inventory[index].GetSellingPrice(); // A random estimate for how much each fish is worth
                 Player.Money += fishValue;
                 Console.WriteLine("You sold a {0} for ${1}!",Player.inventory[index].Species,fishValue);
                 Player.InventoryRemoveAtIndex(index);

@@ -48,7 +48,7 @@ namespace FishingGame
             weight = size / 3; // A really rough estimate from cm to lb
         }
 
-        public int GetSellingPrice()
+        public virtual int GetSellingPrice()
         {
             // Random formula to determine the selling point of the fish
             return weight * 6;
@@ -63,6 +63,7 @@ namespace FishingGame
                 $"Size           : {size}cm \n" +
                 $"Size Category  : SIZE 1 \n" +
                 $"Weight         : {Weight}lbs \n" +
+                $"Price          : ${GetSellingPrice()} \n" +
                 "============================"
                 );
         }
