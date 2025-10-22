@@ -13,7 +13,7 @@ namespace FishingGame
             {
                 Console.WriteLine("You caught a fish!");
                 Fish newFish = new Fish();
-                newFish.Stats();
+                newFish.DisplayStats();
                 Player.AddFish(newFish);
                 Console.WriteLine("Press Enter to Continue");
                 Console.ReadLine();
