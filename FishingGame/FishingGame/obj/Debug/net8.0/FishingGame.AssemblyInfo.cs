@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FishingGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb2b6644fc629600f2a19d739ccbef3410ad4413")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f50fdd93d17d8f60dc52d2566727d4d8c58e132")]
 [assembly: System.Reflection.AssemblyProductAttribute("FishingGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FishingGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
