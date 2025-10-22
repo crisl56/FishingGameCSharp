@@ -67,7 +67,7 @@ namespace FishingGame
             Console.SetCursorPosition(CursorPosX, CursorPosY);
         }
 
-        public static void BoatMovement()
+        public static void LiveGame()
         {
             while (true)
             {
@@ -88,44 +88,53 @@ namespace FishingGame
                 }
                 BoatAsset();
                 Console.SetCursorPosition(0, Console.CursorTop);
-                FishMovement();
-                if (CountFish() < MaxFish) FishSpawning();
-                Console.Clear();
-                FishingWindow.Display();
+                UpdateFishesAndDisplay();
                 Console.SetCursorPosition(0, 12);
             }
+        }
+        public static void UpdateFishesAndDisplay()
+        {
+            FishMovement();
+            if (CountFish() < MaxFish) FishSpawning();
+            Console.Clear();
+            FishingWindow.Display();
         }
 
         public static void FishMovement() // By Ken
         {
             Random random = new Random();
+            // Loop through matrix using i and j as indices
             for (int i = 0; i < waterMatrix.GetLength(0); i++)
             {
                 for (int j = 0; j < waterMatrix.GetLength(1); j++)
                 {
+                    // if the current cell has a fish, execut fish movement logic
                     if (waterMatrix[i,j].HasFish)
                     {
-                        Fish fish = (Fish)waterMatrix[i,j];
-                        int dir = random.Next(4);
-                        switch (dir)
+                        Fish fish = (Fish)waterMatrix[i,j]; // Copy the fish in the cell 
+
+                        int directionToMove = random.Next(4);
+                        switch (directionToMove)
                         {
                             case 0:
                                 if (j - 1 >= 0) // within bounds
                                 {// Move Fish Left
                                     if (!waterMatrix[i, j - 1].HasFish)
-                                    {// If there's a fish there already, do nothing
+                                    {// If cell to the left is occupied, do nothing
+                                        // Clear the original cell and paste the copied fish into the cell to the left of it
                                         waterMatrix[i, j] = new Cell();
                                         waterMatrix[i, j - 1] = fish;
                                     }
                                 }
                                 else
-                                {// Means Fish left the boundaries
+                                {// Means Fish exited the boundaries
                                     waterMatrix[i, j] = new Cell();
                                 }
                                 break;
                             case 1:
                                 if (j + 1 < waterMatrix.GetLength(1))
                                 {// Move Fish Right
+                                    // Clear the original cell and paste the copied fish into the cell to the right of it
                                     if (!waterMatrix[i, j + 1].HasFish)
                                     {
                                         waterMatrix[i, j] = new Cell();
@@ -133,7 +142,7 @@ namespace FishingGame
                                     }
                                 }
                                 else
-                                {// Fish left boundaries
+                                {// Fish exited boundaries
                                     waterMatrix[i, j] = new Cell();
                                 }
                                 break;
@@ -170,9 +179,10 @@ namespace FishingGame
 
             void SpawnFish(Fish fish) // By Ken
             {// Only needed in this function therefore created in the scope of FishSpawning
+                // Will find a space unnocupied by another fish to spawn in
                 while (true)
                 {
-                    int row = random.Next(9)+1; //
+                    int row = random.Next(9)+1; // Avoids the first row (water cells)
                     int col = random.Next(10);
                     if (!waterMatrix[row, col].HasFish)
                     {
@@ -181,12 +191,11 @@ namespace FishingGame
                     }
                 }
             }
-
+            // Spawn fishes according to fishToSpawn
             for (int i = 0; i < fishToSpawn; i++)
             {
-                
-                int fishType = random.Next(4);
-                switch (fishType)
+                int randomFishSpecies = random.Next(4);
+                switch (randomFishSpecies)
                 {
                     case 0:// New Tuna
                         SpawnFish(new Tuna());
