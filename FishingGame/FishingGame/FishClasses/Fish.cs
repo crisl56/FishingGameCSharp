@@ -56,11 +56,11 @@ namespace FishingGame
         public void DisplayStats()
         {
             Console.WriteLine(
-                "============================" +
-                $"Species        : {Species}" +
-                $"Size           : {size}cm" +
-                $"Size Category  : SIZE 1" +
-                $"Weight         : {Weight}lbs" +
+                "============================ \n" +
+                $"Species        : {Species} \n" +
+                $"Size           : {size}cm \n" +
+                $"Size Category  : SIZE 1 \n" +
+                $"Weight         : {Weight}lbs \n" +
                 "============================"
                 );
         }
