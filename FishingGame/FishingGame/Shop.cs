@@ -7,6 +7,8 @@ namespace FishingGame
             bool running = true;
             while (running)
             {
+                // You can turn this into its own function
+                // EX: like DisplayShopOptions()
                 Console.Clear();
                 Console.WriteLine("=== Welcome to the local Fishing Shop! ===");
                 Console.WriteLine($"Your Money: ${Player.Money}");
@@ -18,6 +20,8 @@ namespace FishingGame
                 Console.WriteLine("================");
                 Console.WriteLine("Choose an option: ");
 
+                // This could also be its own function
+                // EX: 
                 int userChoice;
                 Input.ReadInt(out userChoice, 0, 2);
 
@@ -45,6 +49,8 @@ namespace FishingGame
             Console.Clear();
             Console.WriteLine("===== SELL FISH =====");
             Player.ShowInventory();
+
+            // Increase the number whhen we get an upgrade
             Console.WriteLine("Select a slot number to sell (0 - 9), or -1 to cancel:");
             Input.ReadInt(out int slot, -1, 9);
 
