@@ -7,7 +7,7 @@ namespace FishingGame
     {
         public static void GoFish()
         {
-            Random random = new Random();
+            /*Random random = new Random();
             int catchChance = random.Next(1, 5);
             if (catchChance > Player.CatchRate)
             {
@@ -23,6 +23,12 @@ namespace FishingGame
                 Console.WriteLine("You casted your line and no fish bit :(");
                 Console.WriteLine("Press Enter to Continue");
                 Console.ReadLine();
+            }*/
+
+            // Fish Line going down
+            for (int lineDepth = 0; lineDepth < waterMatrix.Length; lineDepth++)
+            {
+
             }
         }
         public static void SellFish(int index)
