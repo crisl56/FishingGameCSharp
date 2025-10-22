@@ -19,6 +19,7 @@ namespace FishingGame
         protected int size;
         protected int weight;
         protected override string mAsset { get; set; } = "<O(((><"; // max ASCII is 7 characters
+        protected override string mAssetReversed { get; set; } = "><)))O>";
 
         // Other
         protected override ConsoleColor mDisplayColor { get; set; } = ConsoleColor.White;

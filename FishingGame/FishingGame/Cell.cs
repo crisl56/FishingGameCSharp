@@ -9,12 +9,13 @@ namespace FishingGame
     public  class Cell
     {
         protected virtual string mAsset { get; set; } = "       ";
+        protected virtual string mAssetReversed { get; set; } = "       ";
         protected virtual ConsoleColor mDisplayColor { get; set; } = ConsoleColor.White ;
         public void DisplayASCII(bool shouldReverse)
         {
             string mAssetToPrint = mAsset;
 
-            if (shouldReverse) { mAssetToPrint = ReverseString(mAsset); }
+            if (shouldReverse) { mAssetToPrint = mAssetReversed; }
 
             // Custom colours
             Console.ForegroundColor = mDisplayColor;

@@ -14,6 +14,7 @@ namespace FishingGame
         {
             this.species = "Tuna";
             this.mAsset = " <*7>< ";
+            this.mAssetReversed = " ><7*> ";
 
             this.mDisplayColor = ConsoleColor.Red;
         }
