@@ -17,7 +17,6 @@ namespace FishingGame
             set
             {
                 int tempPosition = (0 + (value * (7)));
-                Console.WriteLine("Value:       " + value);
                 if (tempPosition > 70)
                 {
                     mPosition = 70;
