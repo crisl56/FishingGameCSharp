@@ -6,9 +6,12 @@ namespace FishingGame
     {
         static void Main(string[] args)
         {
-            FishingWindow.Display();
-            Console.SetCursorPosition(0, 12);
-            FishingWindow.BoatMovement();
+            Fish fish = new Fish();
+            Player.AddFish(fish);
+            Shop.OpenMenu();
+           // FishingWindow.Display();
+            //Console.SetCursorPosition(0, 12);
+            //FishingWindow.BoatMovement();
             //Player.Position = 3;
             //Console.WriteLine(Player.Position);
             //Console.WriteLine(Player.PositionRaw);
