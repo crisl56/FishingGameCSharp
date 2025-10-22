@@ -2,46 +2,52 @@ namespace FishingGame
 {
     public static class Shop
     {
+        public static bool running = true;
         public static void OpenMenu()
         {
-            bool running = true;
+            
             while (running)
             {
-                // You can turn this into its own function
-                // EX: like DisplayShopOptions()
-                Console.Clear();
-                Console.WriteLine("=== Welcome to the local Fishing Shop! ===");
-                Console.WriteLine($"Your Money: ${Player.Money}");
-                Console.WriteLine();
-                Console.WriteLine("================");
-                Console.WriteLine("1. Sell Fish");
-                Console.WriteLine("2. Buy Upgrades");
-                Console.WriteLine("0. Exit Shop");
-                Console.WriteLine("================");
-                Console.WriteLine("Choose an option: ");
-
-                // This could also be its own function
-                // EX: 
-                int userChoice;
-                Input.ReadInt(out userChoice, 0, 2);
-
-                switch(userChoice)
-                {
-                    case 1:
-                        SellFishMenu();
-                        break;
-                    case 2:
-                        BuyItemsMenu();
-                        break;
-                    case 0:
-                        running = false;
-                        break;
-                }
+                DisplayShopOptions();
+                Menus();
             }
 
             Console.Clear();
             Console.WriteLine("You leave the shop and head back to your boat...");
             Console.ReadLine();
+        }
+
+        private static void DisplayShopOptions()
+        {
+            Console.Clear();
+            Console.WriteLine("=== Welcome to the local Fishing Shop! ===");
+            Console.WriteLine($"Your Money: ${Player.Money}");
+            Console.WriteLine();
+            Console.WriteLine("================");
+            Console.WriteLine("1. Sell Fish");
+            Console.WriteLine("2. Buy Upgrades");
+            Console.WriteLine("0. Exit Shop");
+            Console.WriteLine("================");
+            Console.WriteLine("Choose an option: ");
+        }
+
+        private static void Menus()
+        {
+            int userChoice;
+            Input.ReadInt(out userChoice, 0, 2);
+
+            switch (userChoice)
+            {
+                case 1:
+                    SellFishMenu();
+                    break;
+                case 2:
+                    BuyItemsMenu();
+                    break;
+                case 0:
+                    running = false;
+                    break;
+            }
         }
 
         private static void SellFishMenu()
@@ -51,8 +57,8 @@ namespace FishingGame
             Player.ShowInventory();
 
             // Increase the number whhen we get an upgrade
-            Console.WriteLine("Select a slot number to sell (0 - 9), or -1 to cancel:");
-            Input.ReadInt(out int slot, -1, 9);
+            Console.WriteLine($"Select a slot number to sell (0 - {Player.MaxInventorySize - 1}), or -1 to cancel:");
+            Input.ReadInt(out int slot, -1, Player.MaxInventorySize - 1);
 
             if(slot == -1)
             {
@@ -131,6 +137,7 @@ namespace FishingGame
             Player.Money -= 100;
             Player.UpgradeBackpack(Player.MaxInventorySize + 5);
             Console.WriteLine("You bought a bigger Backpack! Max inventory has been increased!");
+            Console.WriteLine($"You can now carry {Player.MaxInventorySize} fish");
             Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
         }

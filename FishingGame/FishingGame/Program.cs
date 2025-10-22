@@ -7,7 +7,11 @@ namespace FishingGame
         static void Main(string[] args)
         {
             Fish fish = new Fish();
+            Fish fish2 = new Fish();
+            Fish fish3 = new Fish();
             Player.AddFish(fish);
+            Player.AddFish(fish2);
+            Player.AddFish(fish3);
             Shop.OpenMenu();
            // FishingWindow.Display();
             //Console.SetCursorPosition(0, 12);
