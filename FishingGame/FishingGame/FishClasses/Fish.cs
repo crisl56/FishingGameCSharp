@@ -25,6 +25,8 @@ namespace FishingGame
         protected override ConsoleColor mDisplayColor { get; set; } = ConsoleColor.White;
 
         // Constructor
+        // NOTE: You should really only call the parent fish class for testing purposes.
+        //       Any other use in the game should be using the child classes!!!
         public Fish()
         {
             mHasFish = true;
@@ -57,9 +59,10 @@ namespace FishingGame
         // Display
         public void DisplayStats()
         {
+            // The funny part is where there is no size category
             Console.WriteLine(
                 "============================ \n" +
-                $"Species        : {Species} \n" +
+                $"Species        : {species} \n" +
                 $"Size           : {size}cm \n" +
                 $"Size Category  : SIZE 1 \n" +
                 $"Weight         : {Weight}lbs \n" +
