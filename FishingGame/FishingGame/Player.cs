@@ -10,6 +10,34 @@ namespace FishingGame
         private static int catchRate = 2;
         private static int _money = 0;
         public static Fish?[] inventory = new Fish[maxInventorySize];  // This is nullable to make empty slots
+        private static int mPosition = 0;
+        public static int Position
+        {
+            get => mPosition/7;
+            set
+            {
+                int tempPosition = (0 + (value * (7)));
+                Console.WriteLine("Value:       " + value);
+                if (tempPosition > 70)
+                {
+                    mPosition = 70;
+                }
+                else if (tempPosition <= 0)
+                {
+                    mPosition = 0;
+                }
+                else
+                {
+                    mPosition = tempPosition;
+                }
+            }
+        }
+
+        public static int PositionRaw
+        {
+            get => mPosition;
+            set => mPosition = value;
+        }
 
         // Getters / Setters
         public static int CatchRate

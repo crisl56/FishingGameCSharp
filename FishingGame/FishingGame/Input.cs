@@ -2,7 +2,7 @@
 
 namespace FishingGame
 {
-    internal class Input
+    public static class Input
     {
         // Changes Input variable given
         // Does not exit until input is within Range (inclusive)
@@ -15,14 +15,13 @@ namespace FishingGame
             {
                 string? inputToCheck = Console.ReadLine();
 
-                Console.SetCursorPosition(0, Console.CursorTop - 1);                    //
-                Console.WriteLine(new string(' ', Console.WindowWidth));                    // Resets cursor position
-                Console.SetCursorPosition(originalCursorLeft, Console.CursorTop - 1);   //
-
                 if (int.TryParse(inputToCheck, out Input) && Input >= Min && Input <= Max)
                 {
                     return;
                 }
+
+                Console.SetCursorPosition(originalCursorLeft, Console.CursorTop - 1);   //
+                Console.SetCursorPosition(originalCursorLeft, Console.CursorTop - 2);   //
             }
         }
 
@@ -37,13 +36,13 @@ namespace FishingGame
             {
                 string? inputToCheck = Console.ReadLine();
 
-                Console.SetCursorPosition(originalCursorLeft, Console.CursorTop - 1);   // Resets cursor position
-
-                if (!(inputToCheck == ""))
+                if (!(inputToCheck == "") || !(inputToCheck == null))
                 {
                     Input = inputToCheck;
                     return;
                 }
+
+                Console.SetCursorPosition(originalCursorLeft, Console.CursorTop - 1);   // Resets cursor position
             }
         }
     }
