@@ -17,9 +17,9 @@ namespace FishingGame
             set
             {
                 int tempPosition = (0 + (value * (7)));
-                if (tempPosition > 70)
+                if (tempPosition > 63)
                 {
-                    mPosition = 70;
+                    mPosition = 63;
                 }
                 else if (tempPosition <= 0)
                 {
