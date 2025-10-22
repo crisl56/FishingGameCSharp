@@ -13,10 +13,11 @@ namespace FishingGame
         private static int mPosition = 0;
         public static int Position
         {
-            get => mPosition;
+            get => mPosition/7;
             set
             {
                 int tempPosition = (0 + (value * (7)));
+                Console.WriteLine("Value:       " + value);
                 if (tempPosition > 70)
                 {
                     mPosition = 70;
