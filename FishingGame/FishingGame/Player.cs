@@ -111,5 +111,37 @@ namespace FishingGame
             Console.WriteLine("Press Enter to Continue");
             Console.ReadLine();
         }
+
+        // Updrade Backpack size stuff WIP
+        public static int MaxInventorySize
+        {
+            get => maxInventorySize;
+        }
+
+        public static void UpgradeBackpack(int newSize)
+        {
+            if(newSize <= maxInventorySize)
+            {
+                Console.WriteLine("You alreay have this size or larger");
+                Console.WriteLine("Press enter to continue");
+                Console.ReadLine();
+                return;
+            }
+
+            Fish?[] newInventory = new Fish[newSize];
+            for(int i = 0;i < newInventory.Length; i++)
+            {
+                newInventory[i] = inventory[i];
+            }
+
+            inventory = newInventory;
+            maxInventorySize = newSize;
+
+            Console.WriteLine($"Backpack upgraded! You can now carry {maxInventorySize} fish");
+            Console.WriteLine("Press enter to continue");
+            Console.ReadLine();
+        }
+
+        ///
     }
 }
