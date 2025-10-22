@@ -11,6 +11,7 @@ namespace FishingGame
         public Water()
         {
             this.mAsset = "~^~_~^~";
+            this.mAssetReversed = "~^~_~^~";
         }
     }
 }

@@ -43,9 +43,9 @@ namespace FishingGame
             Console.WriteLine(new string(' ', Console.WindowWidth));
             Console.WriteLine(new string(' ', Console.WindowWidth));
             Console.WriteLine(new string(' ', Console.WindowWidth));
-            Console.SetCursorPosition(1 + Player.Position, 1);
+            Console.SetCursorPosition(1 + Player.PositionRaw, 1);
             Console.Write(" _n_   Clyde W. Watson\r\n");
-            Console.SetCursorPosition(1 + Player.Position, 2);
+            Console.SetCursorPosition(1 + Player.PositionRaw, 2);
             Console.Write("(---)");
             Console.SetCursorPosition(CursorPosX, CursorPosY);
         }
@@ -72,19 +72,18 @@ namespace FishingGame
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.A:
-                        Player.PositionRaw -= 7;
+                        Player.Position -= 1;
 
                         break;
                     case ConsoleKey.D:
-                        Player.PositionRaw += 7;
+                        Player.Position += 1;
                         break;
                     case ConsoleKey.Escape:
                         return;
                 }
                 BoatAsset();
-                Console.Write(Player.Position);
+                Console.SetCursorPosition(0, Console.CursorTop);
             }
-
         }
     }
 }

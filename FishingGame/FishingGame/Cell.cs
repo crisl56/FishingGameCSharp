@@ -9,6 +9,7 @@ namespace FishingGame
     public  class Cell
     {
         protected virtual string mAsset { get; set; } = "       ";
+        protected virtual string mAssetReversed { get; set; } = "       ";
         protected virtual ConsoleColor mDisplayColor { get; set; } = ConsoleColor.White ;
         protected bool mHasFish = false;
         public bool HasFish { get => mHasFish; /*private set*/ }
@@ -16,7 +17,7 @@ namespace FishingGame
         {
             string mAssetToPrint = mAsset;
 
-            if (shouldReverse) { mAssetToPrint = ReverseString(mAsset); }
+            if (shouldReverse) { mAssetToPrint = mAssetReversed; }
 
             // Custom colours
             Console.ForegroundColor = mDisplayColor;
