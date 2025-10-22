@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Main Programmer: Ken Arigo
+
+using System;
 
 
 namespace FishingGame
@@ -7,7 +9,7 @@ namespace FishingGame
     {
         public static void GoFish()
         {
-            /*Random random = new Random();
+            Random random = new Random();
             int catchChance = random.Next(1, 5);
             if (catchChance > Player.CatchRate)
             {
@@ -23,12 +25,37 @@ namespace FishingGame
                 Console.WriteLine("You casted your line and no fish bit :(");
                 Console.WriteLine("Press Enter to Continue");
                 Console.ReadLine();
-            }*/
+            }
 
             // Fish Line going down
-            for (int lineDepth = 0; lineDepth < waterMatrix.Length; lineDepth++)
+            for (int lineDepth = 0; lineDepth < FishingWindow.waterMatrix.Length; lineDepth++)
             {
-
+                if (FishingWindow.waterMatrix[Player.Position, lineDepth].HasFish)
+                {
+                    // Logic
+                    //FishOnTheLine(FishingWindow.waterMatrix[Player.Position, lineDepth]);
+                    break;
+                }
+            }
+        }
+        private static void FishOnTheLine(Fish fish)
+        {
+            Console.WriteLine("A fish is on the line! Press Enter to reel it in!");
+            Console.ReadLine();
+            Random random = new Random();
+            int catchChance = random.Next(1, 5);
+            if (catchChance > Player.CatchRate)
+            {
+                Console.WriteLine("You caught a fish!");
+                Fish newFish = new Fish();
+                newFish.DisplayStats();
+                Player.AddFish(newFish);
+                Console.WriteLine("Press Enter to Continue");
+                Console.ReadLine();
+            }else
+            {
+                Console.WriteLine("The fish got away!");
+                Console.ReadKey();
             }
         }
         public static void SellFish(int index)

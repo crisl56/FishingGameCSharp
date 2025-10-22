@@ -26,6 +26,7 @@ namespace FishingGame
         // Constructor
         public Fish()
         {
+            mHasFish = true;
             species = "Fish"; // Default Fish
             CalculateSizeWeight();
         }

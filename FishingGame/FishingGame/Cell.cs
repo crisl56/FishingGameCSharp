@@ -10,6 +10,8 @@ namespace FishingGame
     {
         protected virtual string mAsset { get; set; } = "       ";
         protected virtual ConsoleColor mDisplayColor { get; set; } = ConsoleColor.White ;
+        protected bool mHasFish = false;
+        public bool HasFish { get => mHasFish; /*private set*/ }
         public void DisplayASCII(bool shouldReverse)
         {
             string mAssetToPrint = mAsset;

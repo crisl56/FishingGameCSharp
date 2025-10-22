@@ -12,7 +12,7 @@ namespace FishingGame
         // Base Constructor
         public ClownFish() : base()
         {
-            this.species = "Tuna";
+            this.species = "Clownfish";
             this.mAsset = " <*7>< ";
 
             this.mDisplayColor = ConsoleColor.Red;
