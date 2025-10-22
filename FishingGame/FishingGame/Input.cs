@@ -21,7 +21,6 @@ namespace FishingGame
                 }
 
                 Console.SetCursorPosition(originalCursorLeft, Console.CursorTop - 1);   //
-                Console.WriteLine(new string(' ', Console.WindowWidth));                    // Resets cursor position
                 Console.SetCursorPosition(originalCursorLeft, Console.CursorTop - 2);   //
             }
         }
@@ -37,7 +36,7 @@ namespace FishingGame
             {
                 string? inputToCheck = Console.ReadLine();
 
-                if (!(inputToCheck == ""))
+                if (!(inputToCheck == "") || !(inputToCheck == null))
                 {
                     Input = inputToCheck;
                     return;
