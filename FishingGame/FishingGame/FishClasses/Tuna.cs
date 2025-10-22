@@ -9,6 +9,7 @@ namespace FishingGame
         // Base Constructor
         public Tuna() : base()
         {
+            mHasFish = true;
             this.species = "Tuna";
             this.mAsset = "<^(((><";
             this.mAssetReversed = "><)))^>";

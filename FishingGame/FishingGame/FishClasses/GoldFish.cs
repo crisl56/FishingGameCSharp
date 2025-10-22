@@ -10,6 +10,7 @@ namespace FishingGame
         // Base Constructor
         public GoldFish() : base()
         {
+            mHasFish = true;
             this.species = "Gold Fish";
             this.mAsset = "  <><  ";
             this.mAssetReversed = "  ><>  ";

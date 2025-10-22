@@ -9,39 +9,45 @@ namespace FishingGame
     {
         public static void GoFish()
         {
-            Random random = new Random();
-            int catchChance = random.Next(1, 5);
-            if (catchChance > Player.CatchRate)
-            {
-                Console.WriteLine("You caught a fish!");
-                Fish newFish = new Fish();
-                newFish.DisplayStats();
-                Player.AddFish(newFish);
-                Console.WriteLine("Press Enter to Continue");
-                Console.ReadLine();
-            }
-            else
-            {
-                Console.WriteLine("You casted your line and no fish bit :(");
-                Console.WriteLine("Press Enter to Continue");
-                Console.ReadLine();
-            }
 
             // Fish Line going down
-            for (int lineDepth = 0; lineDepth < FishingWindow.waterMatrix.Length; lineDepth++)
+            for (int lineDepth = 0; lineDepth < FishingWindow.waterMatrix.GetLength(1); lineDepth++)
             {
-                if (FishingWindow.waterMatrix[Player.Position, lineDepth].HasFish)
+                if (FishingWindow.waterMatrix[lineDepth, Player.Position].HasFish)
                 {
                     // Logic
-                    //FishOnTheLine(FishingWindow.waterMatrix[Player.Position, lineDepth]);
+                    Fish fishOnLine = (Fish)FishingWindow.waterMatrix[lineDepth, Player.Position];
+                    if (FishOnTheLine(fishOnLine))
+                    {
+                        // Fish caught, therefore fish no longer on map
+                        FishingWindow.waterMatrix[lineDepth, Player.Position] = new Cell();
+                    }
                     break;
                 }
             }
+            // Replace this with logic that clears just that spot on the display
+            Console.Clear();
+            FishingWindow.Display();
+            Console.SetCursorPosition(0, 12);
+
         }
-        private static void FishOnTheLine(Fish fish)
+        private static bool FishOnTheLine(Fish fish)
         {
-            Console.WriteLine("A fish is on the line! Press Enter to reel it in!");
-            Console.ReadLine();
+            void ContinueWithSpace()
+            {
+                bool foundSpace = false;
+                while (!foundSpace)
+                {
+                    switch (Console.ReadKey().Key)
+                    {
+                        case ConsoleKey.Spacebar:
+                            foundSpace = true;
+                            break;
+                    }
+                }
+            }
+            Console.WriteLine("A fish is on the line! Press Space to reel it in!");
+            ContinueWithSpace();
             Random random = new Random();
             int catchChance = random.Next(1, 5);
             if (catchChance > Player.CatchRate)
@@ -50,12 +56,14 @@ namespace FishingGame
                 Fish newFish = new Fish();
                 newFish.DisplayStats();
                 Player.AddFish(newFish);
-                Console.WriteLine("Press Enter to Continue");
-                Console.ReadLine();
+                Console.WriteLine("Press Space to Continue");
+                ContinueWithSpace();
+                return true;
             }else
             {
                 Console.WriteLine("The fish got away!");
                 Console.ReadKey();
+                return false;
             }
         }
         public static void SellFish(int index)
