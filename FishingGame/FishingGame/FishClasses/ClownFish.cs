@@ -13,7 +13,7 @@ namespace FishingGame
         public ClownFish() : base()
         {
             mHasFish = true;
-            this.species = "Clownfish";
+            species = "Clownfish";
             this.mAsset = " <*7>< ";
             this.mAssetReversed = " ><7*> ";
 
