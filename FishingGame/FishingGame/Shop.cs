@@ -14,7 +14,8 @@ namespace FishingGame
 
             Console.Clear();
             Console.WriteLine("You leave the shop and head back to your boat...");
-            Console.ReadLine();
+            Console.WriteLine("Press anything to continue");
+            Console.ReadKey();
         }
 
         private static void DisplayShopOptions()
@@ -57,8 +58,8 @@ namespace FishingGame
             Player.ShowInventory();
 
             // Increase the number whhen we get an upgrade
-            Console.WriteLine($"Select a slot number to sell (0 - {Player.MaxInventorySize - 1}), or -1 to cancel:");
-            Input.ReadInt(out int slot, -1, Player.MaxInventorySize - 1);
+            Console.WriteLine($"Select a slot number to sell (0 - {Player.MaxInventorySize - 1}), -1 to cancel, or -2 to sell all:");
+            Input.ReadInt(out int slot, -2, Player.MaxInventorySize - 1);
 
             if(slot == -1)
             {
@@ -80,9 +81,9 @@ namespace FishingGame
                 Console.WriteLine("=== Buy Upgrades ===");
                 Console.WriteLine($"Your money: ${Player.Money}");
                 Console.WriteLine("====================");
-                Console.WriteLine("1. Better Rod (+1 Catch Rate) -$150");
-                Console.WriteLine("2. Bigger Backpack (+5 slots) - $100");
-                Console.WriteLine("3. Ulitmate Trophy - $10 000");
+                Console.WriteLine("1. Better Rod (+1 Catch Rate) -$25 000");
+                Console.WriteLine("2. Bigger Backpack (+5 slots) - $20 000");
+                Console.WriteLine("3. Ulitmate Trophy - $300 000");
                 Console.WriteLine("0. Return to Shop");
                 Console.WriteLine("====================");
                 Console.WriteLine("Choose an upgrade");
@@ -111,14 +112,14 @@ namespace FishingGame
 
         private static void BuyBetterRod()
         {
-            if(Player.Money < 150)
+            if(Player.Money < 25000)
             {
                 Console.WriteLine("You don't have enough money for a better rod!");
                 Console.ReadLine();
                 return;
             }
 
-            Player.Money -= 150;
+            Player.Money -= 25000;
             Player.CatchRate = Player.CatchRate + 1;
             Console.WriteLine("You bought a better rod! Catch rate has been increased!");
             Console.WriteLine("Press enter to continue...");
@@ -127,14 +128,14 @@ namespace FishingGame
 
         private static void BuyBiggerBackpack()
         {
-            if (Player.Money < 100)
+            if (Player.Money < 20000)
             {
                 Console.WriteLine("You don't have enough money for a bigger backpack!");
                 Console.ReadLine(); 
                 return;
             }
 
-            Player.Money -= 100;
+            Player.Money -= 20000;
             Player.UpgradeBackpack(Player.MaxInventorySize + 5);
             Console.WriteLine("You bought a bigger Backpack! Max inventory has been increased!");
             Console.WriteLine($"You can now carry {Player.MaxInventorySize} fish");
@@ -144,14 +145,14 @@ namespace FishingGame
 
         private static void BuyTrophy()
         {
-            if(Player.Money < 10000)
+            if(Player.Money < 300000)
             {
                 Console.WriteLine("You do not have enough money for the ultimate trophy!");
                 Console.ReadLine();
                 return;
             }
 
-            Player.Money -= 10000;
+            Player.Money -= 300000;
             Console.WriteLine("You bought the Ulitmate Fishing Trophy! You are now the best Fisher on the lake!");
             Console.WriteLine("Whats your goal now?...");
             Console.WriteLine("Press enter to continue...");

@@ -53,9 +53,8 @@ namespace FishingGame
             if (catchChance > Player.CatchRate)
             {
                 Console.WriteLine("You caught a fish!");
-                Fish newFish = new Fish();
-                newFish.DisplayStats();
-                Player.AddFish(newFish);
+                fish.DisplayStats();
+                Player.AddFish(fish);
                 Console.WriteLine("Press Space to Continue");
                 ContinueWithSpace();
                 return true;
@@ -68,6 +67,24 @@ namespace FishingGame
         }
         public static void SellFish(int index)
         {
+            if (index == -2)
+            {
+                int totalSold = 0;
+                for (int i = 0; i < Player.inventory.Length; i++)
+                {
+                    if (Player.inventory[i] != null)
+                    {
+                        int fishValue = Player.inventory[i].GetSellingPrice(); // A random estimate for how much each fish is worth
+                        Player.Money += fishValue;
+                        totalSold += fishValue;
+                    }
+                }
+                Player.inventory = new Fish[Player.inventory.Length];
+                Console.WriteLine($"You sold all your fish for ${totalSold}!");
+                Console.WriteLine("Press anything to continue");
+                Console.ReadKey();
+                return;
+            }
             if (Player.inventory[index] != null)
             {
                 int fishValue = Player.inventory[index].GetSellingPrice(); // A random estimate for how much each fish is worth

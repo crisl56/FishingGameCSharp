@@ -21,7 +21,6 @@ namespace FishingGame
                 }
 
                 Console.SetCursorPosition(originalCursorLeft, Console.CursorTop - 1);   //
-                Console.SetCursorPosition(originalCursorLeft, Console.CursorTop - 2);   //
             }
         }
 

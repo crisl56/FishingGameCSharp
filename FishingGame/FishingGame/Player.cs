@@ -63,14 +63,17 @@ namespace FishingGame
             {
                 if (fish != null)
                 {
-                    Console.WriteLine("Slot {0}", index);
-                    Console.WriteLine("Species: {0}", fish.Species);
-                    Console.WriteLine("Size: {0}cm", fish.Size);
-                    Console.WriteLine("Weight: {0}lbs",fish.Weight);
+                    Console.WriteLine("Slot            : {0}", index);
+                    Console.WriteLine("Species         : {0}", fish.Species);
+                    Console.WriteLine("Size            : {0}cm", fish.Size);
+                    Console.WriteLine("Size Category   : SIZE 1"); // All size 1 is intentional game design
+                    Console.WriteLine("Weight          : {0}lbs",fish.Weight);
+                    Console.WriteLine($"Price          : ${fish.GetSellingPrice()}");
                     Console.WriteLine("====================");
                     index++;
                 }
             }
+            
         }
 
         public static void InventoryRemoveAtIndex(int index)

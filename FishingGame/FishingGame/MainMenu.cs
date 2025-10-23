@@ -25,10 +25,11 @@ namespace FishingGame
 
         private string[] controls = [
             "======================",
-            "a      - Move left",
-            "d      - Move right",
-            "space  - reel in fish",
-            "key    - go to shop",
+            "A      - Move left",
+            "D      - Move right",
+            "SPACE  - Reel in fish",
+            "Q      - Go to Shop",
+            "E      - check Inventory",
             "======================"
             ];
 
@@ -45,6 +46,7 @@ namespace FishingGame
             "CAST YOUR LINE.",
             "CATCH YOUR DESTINY!.",
             "FOR ALL THAT IS LEFT IS FISH.",
+            ""
             ];
 
 

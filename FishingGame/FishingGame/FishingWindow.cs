@@ -84,7 +84,17 @@ namespace FishingGame
                         FishingActions.GoFish();
                         break;
                     case ConsoleKey.Escape:
+                        Console.Clear();
                         return;
+                    case ConsoleKey.E:
+                        Player.ShowInventory();
+                        Console.WriteLine("Press anything to close your inventory");
+                        Console.ReadKey();
+                        break;
+                    case ConsoleKey.Q:
+                        Shop.OpenMenu();
+                        Shop.running = true;
+                        break;
                 }
                 BoatAsset();
                 Console.SetCursorPosition(0, Console.CursorTop);
